@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 9527
+spring:
+  application:
+    name: MICROSERVICE-ZUUL-GATEWAY
+    profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+zuul:
+  prefix: "/legou"
+  ignored-services: "*"
+  routes:
+    plat.serviceId: plat-service
+    plat.path: /plat/**
+    #http://localhost:9527/legou/plat/plat/ajax
+---
+server:
+  port: 9528
+spring:
+  application:
+    name: MICROSERVICE-ZUUL-GATEWAY-TEST
+    profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: gateway-9528.com
+    prefer-ip-address: true
+zuul:
+  prefix: "/legou"
+  ignored-services: "*"
+  routes:
+    plat.serviceId: plat-service
+    plat.path: /plat/**
+    #http://localhost:9527/legou/plat/plat/ajax
