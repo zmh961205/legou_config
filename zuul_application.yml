@@ -21,7 +21,8 @@ zuul:
   routes:
     plat.serviceId: plat-service
     plat.path: /plat/**
-    #http://localhost:9527/legou/plat/plat/ajax
+    product.serviceId: product-service
+    product.path: /product/**
 ---
 server:
   port: 9528
@@ -42,4 +43,5 @@ zuul:
   routes:
     plat.serviceId: plat-service
     plat.path: /plat/**
-    #http://localhost:9527/legou/plat/plat/ajax
+    product.serviceId: product-service
+    product.path: /product/**
