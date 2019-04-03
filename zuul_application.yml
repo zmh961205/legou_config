@@ -7,7 +7,7 @@ server:
 spring:
   application:
     name: MICROSERVICE-ZUUL-GATEWAY
-    profiles: dev
+    profiles: test
 eureka:
   client:
     service-url:
@@ -29,7 +29,7 @@ server:
 spring:
   application:
     name: MICROSERVICE-ZUUL-GATEWAY-TEST
-    profiles: test
+    profiles: dev
 eureka:
   client:
     service-url:
